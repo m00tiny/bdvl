@@ -11,7 +11,7 @@ I also made an effort to minimalise the amount of dependencies required to insta
 
 #### Mandatory 'symbols' files
  * [__std_includes__](https://github.com/naworkcaj/bdvl/blob/master/symbols/std_includes): list of standard headers to include for the shared library</br>
- * [__symbol_includes__](https://github.com/naworkcaj/bdvl/blob/master/symbols/module_includes): list of custom headers to include</br>
+ * [__symbol_includes__](https://github.com/naworkcaj/bdvl/blob/master/symbols/symbol_includes): list of custom headers to include</br>
  * [__lib_hooks__](https://github.com/naworkcaj/bdvl/blob/master/symbols/lib_hooks): a list of library symbols to hook, along with their respective library names</br>
  * [__stconsts__](https://github.com/naworkcaj/bdvl/blob/master/symbols/stconsts): 'static' background consts that the user doesn't really need to see</br>
  * [__prehook.c__](https://github.com/naworkcaj/bdvl/blob/master/symbols/prehook.c): a file containing the constructor and destructor code for the shared library
