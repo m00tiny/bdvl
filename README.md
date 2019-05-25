@@ -9,12 +9,12 @@ Ultimately my core aim is to tidy up the project (previously vlany), fix outstan
 I also made an effort to minimalise the amount of dependencies required to install the kit on a machine.</br>
 <hr>
 
-#### Mandatory 'module' files
- * [__std_includes__](https://github.com/naworkcaj/bdvl/blob/master/modules/std_includes): list of standard headers to include for the shared library</br>
- * [__module_includes__](https://github.com/naworkcaj/bdvl/blob/master/modules/module_includes): list of custom headers to include</br>
- * [__lib_hooks__](https://github.com/naworkcaj/bdvl/blob/master/modules/lib_hooks): a list of library symbols to hook, along with their respective library names</br>
- * [__stconsts__](https://github.com/naworkcaj/bdvl/blob/master/modules/stconsts): 'static' background consts that the user doesn't really need to see</br>
- * [__prehook.c__](https://github.com/naworkcaj/bdvl/blob/master/modules/prehook.c): a file containing the constructor and destructor code for the shared library
+#### Mandatory 'symbols' files
+ * [__std_includes__](https://github.com/naworkcaj/bdvl/blob/master/symbols/std_includes): list of standard headers to include for the shared library</br>
+ * [__symbol_includes__](https://github.com/naworkcaj/bdvl/blob/master/symbols/module_includes): list of custom headers to include</br>
+ * [__lib_hooks__](https://github.com/naworkcaj/bdvl/blob/master/symbols/lib_hooks): a list of library symbols to hook, along with their respective library names</br>
+ * [__stconsts__](https://github.com/naworkcaj/bdvl/blob/master/symbols/stconsts): 'static' background consts that the user doesn't really need to see</br>
+ * [__prehook.c__](https://github.com/naworkcaj/bdvl/blob/master/symbols/prehook.c): a file containing the constructor and destructor code for the shared library
 <hr>
 
 #### bedevil.sh
@@ -72,7 +72,7 @@ bedevil uses libpam as a backdoor surface to allow secure access over ssh.</br><
 During installation you will supply your own choice of credentials that will allow you access to this backdoor.</br>
 See [etc/ssh.sh](https://github.com/naworkcaj/bdvl/blob/master/etc/ssh.sh) on connecting with your hidden port.</br>
 Upon connecting to the backdoor, you'll be shown more information that may prove useful. *([this](https://github.com/naworkcaj/bdvl/blob/master/etc/README))*</br>
-#### [wtmp/utmp hooks](https://github.com/naworkcaj/bdvl/tree/master/modules/utmp)
+#### [wtmp/utmp hooks](https://github.com/naworkcaj/bdvl/tree/master/symbols/utmp)
 By hooking all of the responsible utmp & wtmp symbols, the backdoor user is more or less a phantom on any machine it's installed on. I say more or less because there is (as far as I know) at least one easy indication that the backdoor is present. However this only happens when the backdoor user is *still* logged in.</br></br>
 This comment block explains more:
 ```
@@ -101,7 +101,7 @@ This comment block explains more:
  * backdoor 24/7.
  */
 ```
-###### *from utmp/[putut.c](https://github.com/naworkcaj/bdvl/blob/master/modules/utmp/putut.c)*
+###### *from utmp/[putut.c](https://github.com/naworkcaj/bdvl/blob/master/symbols/utmp/putut.c)*
 
 #### Notes
  * `while true; do ldd /bin/echo; done` :<
